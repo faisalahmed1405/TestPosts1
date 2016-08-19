@@ -50,7 +50,6 @@ public class Tab1 extends Fragment {
                 sendRequest();
             }
 
-
         });*/
         return v;
     }
