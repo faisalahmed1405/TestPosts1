@@ -49,6 +49,8 @@ public class Tab1 extends Fragment {
             public void onClick(View v) {
                 sendRequest();
             }
+
+
         });*/
         return v;
     }
