@@ -44,13 +44,13 @@ public class Tab1 extends Fragment {
         listView = (ListView) v.findViewById(R.id.listView);
         //buttonGet = (Button) v.findViewById(R.id.buttonGet);
         sendRequest();
-        /*buttonGet.setOnClickListener(new View.OnClickListener() {
+        buttonGet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendRequest();
             }
 
-        });*/
+        });
         return v;
     }
 
