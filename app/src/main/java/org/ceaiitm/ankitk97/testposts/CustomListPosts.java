@@ -11,13 +11,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class CustomList extends ArrayAdapter<String> {
-    private String[] text_data;
-    private String[] name;
-    private String[] date;
+public class CustomListPosts extends ArrayAdapter<String> {
+    public String[] text_data;
+    public String[] name;
+    public String[] date;
     private Activity context;
 
-    public CustomList(Activity context, String[] name, String[] date, String[] text_data) {
+    public CustomListPosts(Activity context, String[] name, String[] date, String[] text_data) {
         super(context, R.layout.posts_view_layout, name);
         this.context = context;
         this.name = name;
@@ -29,12 +29,12 @@ public class CustomList extends ArrayAdapter<String> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.posts_view_layout, null);
-        TextView textViewId = (TextView) listViewItem.findViewById(R.id.event_name);
-        TextView textViewName = (TextView) listViewItem.findViewById(R.id.event_date);
+        TextView textViewName = (TextView) listViewItem.findViewById(R.id.event_name);
+        TextView textViewId = (TextView) listViewItem.findViewById(R.id.event_date);
         TextView textViewEmail = (TextView) listViewItem.findViewById(R.id.event_text);
 
-        textViewId.setText(name[position]);
-        textViewName.setText(date[position]);
+        textViewId.setText(date[position]);
+        textViewName.setText(name[position]);
         textViewEmail.setText(text_data[position]);
 
         return listViewItem;
