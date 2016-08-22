@@ -13,13 +13,15 @@ import android.widget.TextView;
 
 public class CustomListPosts extends ArrayAdapter<String> {
     public String[] text_data;
+    public String[] id;
     public String[] name;
     public String[] date;
     private Activity context;
 
-    public CustomListPosts(Activity context, String[] name, String[] date, String[] text_data) {
+    public CustomListPosts(Activity context, String[] id, String[] name, String[] date, String[] text_data) {
         super(context, R.layout.posts_view_layout, name);
         this.context = context;
+        this.id = id;
         this.name = name;
         this.date = date;
         this.text_data = text_data;

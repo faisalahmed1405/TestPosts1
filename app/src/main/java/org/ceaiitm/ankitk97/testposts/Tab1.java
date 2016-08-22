@@ -75,17 +75,17 @@ public class Tab1 extends Fragment {
     private void showJSON(String json){
         ParseJSONPosts pj = new ParseJSONPosts(json);
         pj.parseJSON();
-        final CustomListPosts cl = new CustomListPosts(getActivity(), ParseJSONPosts.names, ParseJSONPosts.date, ParseJSONPosts.textData);
+        final CustomListPosts cl = new CustomListPosts(getActivity(), ParseJSONPosts.id,ParseJSONPosts.names, ParseJSONPosts.date, ParseJSONPosts.textData);
         listView.setAdapter(cl);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                String names = cl.name[position];
+                String postID = cl.id[position];
 
                 Context context = getContext();
                 Intent intent = new Intent(context, PostsDetails.class);
-                intent.putExtra(PostsDetails.EXTRA_POSTID, names);
+                intent.putExtra(PostsDetails.EXTRA_POSTID, postID);
 
                 context.startActivity(intent);
 

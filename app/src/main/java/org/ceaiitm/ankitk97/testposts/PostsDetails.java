@@ -36,16 +36,11 @@ public class PostsDetails extends AppCompatActivity {
         Intent intent = getIntent();
         String id = intent.getStringExtra(EXTRA_POSTID);
 
-        sendRequest();
+        sendRequest(id);
 
-        TextView name = (TextView) findViewById(R.id.postDetails_name);
-        TextView date = (TextView) findViewById(R.id.postDetails_date);
-        TextView textData = (TextView) findViewById(R.id.postDetails_text_data);
-        TextView images = (TextView) findViewById(R.id.postDetails_images);
-        Toast.makeText(getBaseContext(), id, Toast.LENGTH_SHORT).show();
     }
 
-    public void sendRequest(){
+    public void sendRequest(final String postID){
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, JSON_URL,
 
@@ -64,7 +59,8 @@ public class PostsDetails extends AppCompatActivity {
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
-                params.put("id",EXTRA_POSTID);
+                Log.d("postID", postID);
+                params.put("ID",postID);
                 return params;
             }
         };
