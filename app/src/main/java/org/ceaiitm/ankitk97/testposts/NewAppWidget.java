@@ -34,7 +34,7 @@ public class NewAppWidget extends AppWidgetProvider {
 
             views.setOnClickPendingIntent(R.id.button, pending);
             appWidgetManager.updateAppWidget(currentWidgetId,views);
-            Toast.makeText(context, "widget added", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "widget added", Toast.LENGTH_SHORT).show();//
         }
 
 
